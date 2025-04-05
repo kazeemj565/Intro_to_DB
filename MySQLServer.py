@@ -1,15 +1,15 @@
 import mysql.connector
 
-
-mydb = mysql.connector.connect(
-    host='localhost',
-    username='root',
-    password='Qasim@alx2024',
-    database='alx_book_store'
-)
-
-
-print(mydb.get_server_info())
+try:
+    mydb = mysql.connector.connect(
+        host='localhost',
+        username='root',
+        password='Qasim@alx2024',
+        database='alx_book_store'
+    )
+    print(mydb.get_server_info())
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
 
 mycursor = mydb.cursor()
 
